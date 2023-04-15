@@ -83,8 +83,10 @@ news     ✓ [======================================] 50 VUs  30s
 ```
 for k6
 > brew install k6
+
 for influxdb
 > brew install influxdb@1
+
 for grafana
 > brew install grafana
 ```
@@ -95,6 +97,7 @@ for grafana
 for influxdb
 > brew services start influxdb@1
 and folder forward to /opt/homebrew/opt/influxdb@1/bin and create database used influx
+
 for grafana
 > brew services start grafana
 and browser go to http://localhost:3000/
