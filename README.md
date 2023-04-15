@@ -28,6 +28,8 @@
 
 ### `Demo`
 
+![image](./k6_testing_result_demo.png)
+
 ```
 k6 run --out influxdb=http://localhost:8086/my_k6_db tests/k6/test.js
 
