@@ -11,7 +11,7 @@ export function contacts_api() {
   const params = {
     tags: { my_custom_tag: "contacts_api" },
   };
-  let response = http.request("GET", URL, params);
+  let response = http.request("GET", URL, {}, params);
   return response;
 }
 
@@ -22,6 +22,6 @@ export function news_api() {
   const params = {
     tags: { my_custom_tag: "news_api" },
   };
-  let response = http.request("GET", URL, params);
+  let response = http.request("GET", URL, {}, params);
   return response;
 }

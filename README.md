@@ -28,10 +28,8 @@
 
 ### `Demo`
 
-![image](./k6_testing_result_demo.png)
-
 ```
-k6 run --out influxdb=http://localhost:8086/my_k6_db tests/k6/test.js
+k6 run --out influxdb=http://localhost:8086/K6_DB tests/k6/test.js
 
           /\      |‾‾| /‾‾/   /‾‾/   
      /\  /  \     |  |/  /   /  /    
@@ -47,30 +45,34 @@ k6 run --out influxdb=http://localhost:8086/my_k6_db tests/k6/test.js
            * contacts: 100 iterations shared among 30 VUs (maxDuration: 30s, exec: contacts, gracefulStop: 30s)
            * news: 50 looping VUs for 30s (exec: news, gracefulStop: 30s)
 
+running (0m30.2s), 00/80 VUs, 7218 complete and 0 interrupted iterations
+contacts ✓ [=====================================] 30 VUs  01.4s/30s  100/100 shared iters
+news     ✓ [=====================================] 50 VUs  30s       
+
      ✓ is status 200
 
-     checks.........................: 100.00% ✓ 5357       ✗ 0   
-     data_received..................: 8.8 MB  288 kB/s
+     checks.........................: 100.00% ✓ 7218       ✗ 0   
+     data_received..................: 12 MB   385 kB/s
      data_sent......................: 1.2 MB  39 kB/s
-     http_req_blocked...............: avg=15.25ms  min=0s       med=3µs      max=2.59s    p(90)=5µs      p(95)=8µs     
-     http_req_connecting............: avg=5.9ms    min=0s       med=0s       max=307.86ms p(90)=0s       p(95)=0s      
-     http_req_duration..............: avg=275.82ms min=211.77ms med=275.03ms max=1.44s    p(90)=316.63ms p(95)=325.64ms
-       { expected_response:true }...: avg=275.82ms min=211.77ms med=275.03ms max=1.44s    p(90)=316.63ms p(95)=325.64ms
-     http_req_failed................: 0.00%   ✓ 0          ✗ 5357
-     http_req_receiving.............: avg=79.83µs  min=8µs      med=51µs     max=7.33ms   p(90)=99µs     p(95)=133µs   
-     http_req_sending...............: avg=19.04µs  min=3µs      med=17µs     max=474µs    p(90)=30µs     p(95)=36µs    
-     http_req_tls_handshaking.......: avg=9.32ms   min=0s       med=0s       max=2.32s    p(90)=0s       p(95)=0s      
-     http_req_waiting...............: avg=275.72ms min=211.75ms med=274.93ms max=1.44s    p(90)=316.5ms  p(95)=325.52ms
-     http_reqs......................: 5357    175.468904/s
-     iteration_duration.............: avg=291.23ms min=211.87ms med=287.24ms max=2.85s    p(90)=319.65ms p(95)=337.67ms
-     iterations.....................: 5357    175.468904/s
+     http_req_blocked...............: avg=9.81ms   min=0s       med=3µs      max=625.56ms p(90)=6µs      p(95)=8µs     
+     http_req_connecting............: avg=3.71ms   min=0s       med=0s       max=211.86ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=204.02ms min=198.01ms med=203.54ms max=256.88ms p(90)=206.7ms  p(95)=208.92ms
+       { expected_response:true }...: avg=204.02ms min=198.01ms med=203.54ms max=256.88ms p(90)=206.7ms  p(95)=208.92ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 7218
+     http_req_receiving.............: avg=80.76µs  min=7µs      med=49µs     max=8.47ms   p(90)=119µs    p(95)=163µs   
+     http_req_sending...............: avg=30.65µs  min=3µs      med=20µs     max=6.38ms   p(90)=44µs     p(95)=55µs    
+     http_req_tls_handshaking.......: avg=5.77ms   min=0s       med=0s       max=395.12ms p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=203.91ms min=197.92ms med=203.45ms max=256.68ms p(90)=206.59ms p(95)=208.77ms
+     http_reqs......................: 7218    238.985343/s
+     iteration_duration.............: avg=214.05ms min=198.23ms med=203.78ms max=854.86ms p(90)=207.04ms p(95)=210.6ms 
+     iterations.....................: 7218    238.985343/s
      vus............................: 50      min=50       max=80
-     vus_max........................: 80      min=80       max=80
-
-running (0m30.5s), 00/80 VUs, 5357 complete and 0 interrupted iterations
-contacts ✓ [======================================] 30 VUs  02.5s/30s  100/100 shared iters
-news     ✓ [======================================] 50 VUs  30s      
+     vus_max........................: 80      min=80       max=80    
 ```
+
+![image](./k6_testing_result_demo.png)
+
+![image](./Influxdb_demo.png)
 
 ### `Requirement`
 

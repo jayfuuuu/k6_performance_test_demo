@@ -13,6 +13,6 @@ export function search_api(q) {
   const params = {
     tags: { my_custom_tag: "search_api" },
   };
-  let response = http.request("GET", URL, params);
+  let response = http.request("GET", URL, {}, params);
   return response;
 }
